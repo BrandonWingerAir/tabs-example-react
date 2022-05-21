@@ -29,13 +29,13 @@ export default function App() {
         </Tabs>
       </TabsContainer>
       <TabPanelContainer>
-        <TabPanel>
+        <TabPanel value={activeTab} selectedIndex={1}>
           <h1>Tab 1</h1>
         </TabPanel>
-        <TabPanel>
+        <TabPanel value={activeTab} selectedIndex={2}>
           <h1>Tab 2</h1>
         </TabPanel>
-        <TabPanel>
+        <TabPanel value={activeTab} selectedIndex={3}>
           <h1>Tab 3</h1>
         </TabPanel>
       </TabPanelContainer>

@@ -5,7 +5,7 @@ import {
     TabHeaderContainer,
     StyledTab,
     StyledTabPanel,
-    TabsHolder,
+    TabsNav,
     inactiveTab
 } from './styles';
 
@@ -36,11 +36,17 @@ export const Tabs = ({selectedTab, onChange, children}) => {
 
     return (
         <TabHeaderContainer>
-            <TabsHolder>{tabs}</TabsHolder>
+            <TabsNav>{tabs}</TabsNav>
         </TabHeaderContainer>
     );
 }
 
-export const TabPanel = () => {
-    return <h3>Panel</h3>
+export const TabPanel = ({children, value, selectedIndex}) => {
+    const hidden = value !== selectedIndex;
+
+    return (
+        <StyledTabPanel hidden={hidden} active={!hidden}>
+            {children}
+        </StyledTabPanel>
+    )
 }

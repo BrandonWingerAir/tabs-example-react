@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const TabHeaderContainer = styled.div`
     display: flex;
@@ -14,11 +14,16 @@ export const StyledTab = styled.button`
     background-color: transparent;
     border: none;
     cursor: ${(p) => (p.disabled ? "default" : "pointer")};
-    
+    ${(p) =>
+        p.active && 
+        css
+            `color: #00adb5;`
+    }
     ${(p) => !p.active && p.inactiveStyle}
 `;
 
 export const StyledTabPanel = styled.div`
+    display: ${(p) => (p.active ? 'flex' : 'none')};
     font-size: 4rem;
     background: #393e46;
     flex-direction: column;
@@ -27,7 +32,8 @@ export const StyledTabPanel = styled.div`
     justify-content: center;
 `;
 
-export const TabsHolder = styled.div`
+// TODO: flex-direction: column; (Mobile Screens)
+export const TabsNav = styled.div`
     display: flex;
 `;
 
