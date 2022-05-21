@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import { Tabs, Tab, TabPanel } from './components/tabs/tabs';
 import "./styles.css";
@@ -12,13 +13,19 @@ const TabPanelContainer = styled.div`
 `;
 
 export default function App() {
+  const [activeTab, setActiveTab] = useState(1);
+
+  const handleChange = (e, value) => {
+    setActiveTab(value);
+  }
+
   return (
     <div className="App">
       <TabsContainer>
-        <Tabs>
-          <Tab></Tab>
-          <Tab></Tab>
-          <Tab></Tab>
+        <Tabs selectedTab={activeTab} onChange={handleChange}>
+          <Tab label="Tab 1" value={1}></Tab>
+          <Tab label="Tab 2" value={2}></Tab>
+          <Tab label="Tab 3" value={3}></Tab>
         </Tabs>
       </TabsContainer>
       <TabPanelContainer>
