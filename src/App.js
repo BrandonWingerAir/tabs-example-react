@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import { Tabs, Tab, TabPanel } from './components/tabs/tabs';
+import "./styles.css";
 
-function App() {
+const TabsContainer = styled.div`
+  display: flex;
+  padding: 2px;
+`;
+
+const TabPanelContainer = styled.div`
+  height: 100vh;
+`;
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TabsContainer>
+        <Tabs>
+          <Tab></Tab>
+          <Tab></Tab>
+          <Tab></Tab>
+        </Tabs>
+      </TabsContainer>
+      <TabPanelContainer>
+        <TabPanel>
+          <h1>Tab 1</h1>
+        </TabPanel>
+        <TabPanel>
+          <h1>Tab 2</h1>
+        </TabPanel>
+        <TabPanel>
+          <h1>Tab 3</h1>
+        </TabPanel>
+      </TabPanelContainer>
     </div>
   );
 }
-
-export default App;

@@ -1,0 +1,14 @@
+body, h1 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    background: #222831;
+    color: #fff;
+    letter-spacing: 0.25em;
+    height: 100vh;
+}
